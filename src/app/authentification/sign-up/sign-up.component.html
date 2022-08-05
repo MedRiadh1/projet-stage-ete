@@ -1,1 +1,29 @@
-<p>sign-up works!</p>
+<div>
+    <h2 style="text-align: center;">Registration Form</h2>
+    
+    <div  class="d-flex h-100 align-items-center justify-content-center">
+      <form [formGroup]="registrationForm" d-flex h-100 align-items-center justify-content-center>
+
+            <div class="row">
+                  <input type="text" formControlName="firstName" placeholder="First name" aria-label="First name">
+            </div>
+            
+            <div class="row">
+                  <input type="text" formControlName="lastName" placeholder="Last name" aria-label="Last name">
+            </div>
+    
+            <div class="row">
+                <input type="email" formControlName="email" placeholder="Email" aria-label="Email">
+          </div>
+            
+          <div class="row">
+                <input type="text" formControlName="password" placeholder="Password" aria-label="Password">
+          </div>
+            
+          <div class="row">
+               <input type="text" formControlName="confirmPassword" placeholder="Confirm password" aria-label="Confirm password">
+          </div>
+        </form>
+    </div>
+    
+</div>

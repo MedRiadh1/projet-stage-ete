@@ -1,19 +1,29 @@
-<div>
-    <h2>Registration Form</h2>
-    <form [formGroup]="registrationForm">
-        <div>
-            <label>Username</label>
-            <input formControlName="userName" type="text">
-        </div>
-        
-        <div>
-            <label>Password</label>
-            <input formControlName="password" type="password">
-        </div>
-        
-        <div>
-            <label>Confirm Password</label>
-            <input formControlName="confirmPassword" type="password">
-        </div>
-    </form>
+<div class="modalDialog">
+    <div class="gradiantClass w-100">
+        <div class="card">
+            <div class="card-header border-0">
+              <h2>Log in Form</h2>
+            </div>
+            <div  class="card-body border-0">
+               <form [formGroup]="logInForm">
+                   <div class="d-flex align-items-start flex-column mb-3">
+                       <label class="form-label fw-semibold">Username</label>
+                       <input formControlName="uName" placeholder="Username" class="form-control" type="text">
+                   </div>
+                
+                   <div class="d-flex align-items-start flex-column">
+                       <label class="form-label fw-semibold">Password</label>
+                       <input formControlName="pwd" placeholder="Password" class="form-control" type="password">
+                   </div>
+                   
+               </form>
+            </div>
+            <div class="w-100 px-3">
+               <button (click)="submit()" class="btn btn-dark text-white w-100">Sign in</button>
+            </div>
+            <div class="d-flex justify-content-end mt-3 px-3">
+               <a (click)="showSignUp()" class="text-dark">Sign Up</a>
+            </div>
+           </div> 
+    </div>
 </div>

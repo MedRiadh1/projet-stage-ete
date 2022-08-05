@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, ParamMap, Router} from '@angular/router';
 
 @Component({
   selector: 'sign-in',
@@ -8,15 +9,22 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class SignInComponent implements OnInit {
 
-  registrationForm: FormGroup = new FormGroup({
-    userName : new FormControl(''),
-    password: new FormControl(''),
-    confirmPassword : new FormControl('')
+  logInForm: FormGroup  = new FormGroup({
+    uName : new FormControl('', Validators.required),
+    pwd: new FormControl('',Validators.required)
   });
 
-  constructor() { }
+  submitted = false;
+
+  constructor(private route:ActivatedRoute, private router:Router) { }
 
   ngOnInit(): void {
   }
 
+  submit() {
+    console.log(this.logInForm.value);
+  }
+  showSignUp(){
+    this.router.navigate(['signUp'], {relativeTo: this.route});
+  }
 }
