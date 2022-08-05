@@ -12,13 +12,4 @@ export class AuthentificationComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-  showSignIn(){
-    this.router.navigate(['signIn'], {relativeTo: this.route});
-  }
-  
-  showSignUp(){
-    this.router.navigate(['signUp'], {relativeTo: this.route});
-  }
-
 }

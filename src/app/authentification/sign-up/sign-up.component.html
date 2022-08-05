@@ -1,29 +1,42 @@
-<div>
-    <h2 style="text-align: center;">Registration Form</h2>
-    
-    <div  class="d-flex h-100 align-items-center justify-content-center">
-      <form [formGroup]="registrationForm" d-flex h-100 align-items-center justify-content-center>
-
-            <div class="row">
-                  <input type="text" formControlName="firstName" placeholder="First name" aria-label="First name">
+<div class="modalDialog">
+      <div class="gradiantClass w-100">
+            <div class="card">
+                  <div class="card-header border-0">
+                        <h2>Registration Form</h2>
+                  </div>
+                
+                <div  class="card-body border-0">
+                  <form [formGroup]="registrationForm">
+            
+                        <div class="d-flex align-items-start flex-column mb-3">
+                              <label class="form-label fw-semibold">firstname</label>
+                              <input formControlName="firstName" placeholder="First name" class="form-control" type="text">
+                        </div>
+                        
+                        <div class="d-flex align-items-start flex-column mb-3">
+                              <label class="form-label fw-semibold">lastname</label>
+                              <input formControlName="lastName" placeholder="Last name" class="form-control" type="text">
+                        </div>
+                
+                        <div class="d-flex align-items-start flex-column mb-3">
+                              <label class="form-label fw-semibold">Email</label>
+                              <input type="email" formControlName="email" placeholder="Email" class="form-control" type="email">
+                      </div>
+                        
+                      <div class="d-flex align-items-start flex-column mb-3">
+                        <label class="form-label fw-semibold">Password</label>
+                        <input formControlName="password" placeholder="Password" class="form-control" type="password">
+                      </div>
+                        
+                      <div class="d-flex align-items-start flex-column mb-3">
+                        <label class="form-label fw-semibold">Confirm password</label>
+                        <input formControlName="confirmPassword" placeholder="Confirm password"class="form-control" type="password">
+                      </div>
+                    </form>
+                  </div>
+                  <div class="d-flex justify-content-end mt-3 px-3">
+                        <button (click)="showSignIn()" class="text-dark">Sign In</button>
+                  </div>
             </div>
-            
-            <div class="row">
-                  <input type="text" formControlName="lastName" placeholder="Last name" aria-label="Last name">
-            </div>
-    
-            <div class="row">
-                <input type="email" formControlName="email" placeholder="Email" aria-label="Email">
-          </div>
-            
-          <div class="row">
-                <input type="text" formControlName="password" placeholder="Password" aria-label="Password">
-          </div>
-            
-          <div class="row">
-               <input type="text" formControlName="confirmPassword" placeholder="Confirm password" aria-label="Confirm password">
-          </div>
-        </form>
-    </div>
-    
+      </div>
 </div>

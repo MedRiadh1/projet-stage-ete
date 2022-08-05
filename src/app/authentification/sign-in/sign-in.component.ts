@@ -24,6 +24,7 @@ export class SignInComponent implements OnInit {
   submit() {
     console.log(this.logInForm.value);
   }
+  
   showSignUp(){
     this.router.navigate(['signUp'], {relativeTo: this.route});
   }

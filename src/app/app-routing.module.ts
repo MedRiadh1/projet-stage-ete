@@ -8,6 +8,9 @@ const routes: Routes = [
     path: 'auth',
     loadChildren: () => import('./authentification/authentification.module').then(m => m.AuthentificationModule)
   },
+  {path: '', redirectTo: '/signUp', pathMatch: 'prefix'},
+  { path: '',   redirectTo: '/signIn', pathMatch: 'prefix' }
+
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

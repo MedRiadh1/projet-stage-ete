@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { SignInComponent } from '../sign-in/sign-in.component';
 
 
 @Component({
@@ -20,9 +22,14 @@ export class SignUpComponent implements OnInit {
 
   name = new FormControl('');
 
-  constructor() { }
+  constructor(private route:ActivatedRoute, private router:Router) { }
 
   ngOnInit(): void {
+  }
+
+  showSignIn(){
+
+    this.router.navigate(['signIn']);
   }
 
 }
