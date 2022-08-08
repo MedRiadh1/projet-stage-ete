@@ -26,6 +26,6 @@ export class SignInComponent implements OnInit {
   }
   
   showSignUp(){
-    this.router.navigate(['signUp'], {relativeTo: this.route});
+    this.router.navigate(['signUp']);
   }
 }

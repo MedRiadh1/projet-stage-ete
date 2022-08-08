@@ -29,7 +29,7 @@ export class SignUpComponent implements OnInit {
 
   showSignIn(){
 
-    this.router.navigate(['signIn']);
+    this.router.navigate(['/signIn']);
   }
 
 }
