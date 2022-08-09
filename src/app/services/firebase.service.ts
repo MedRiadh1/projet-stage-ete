@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { Route, Router } from '@angular/router';
-import { stringLength } from '@firebase/util';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -13,8 +12,10 @@ export class FirebaseService {
     
   //login method
     login(email : string, password: string){
-      this.fireAuth.signInWithEmailAndPassword(email,password).then(()=>{
-        localStorage.setItem('token','true');
+      this.fireAuth.signInWithEmailAndPassword(email,password).then((res:any)=>{
+        console.log(res);
+        localStorage.setItem('token',res.user.multiFactor.user.accessToken);
+        this.router.navigate(['dashboard']);
       }, err=>{
         alert(err.message);
         this.router.navigate(['/signIn']);
@@ -23,8 +24,10 @@ export class FirebaseService {
 
     //register method
     register(email:string, password:string){
-      this.fireAuth.createUserWithEmailAndPassword(email, password).then(()=>{
+      this.fireAuth.createUserWithEmailAndPassword(email, password).then((res:any)=>{
         alert('Successfully registrated');
+        console.log(res);
+        localStorage.setItem('token', res.user.multiFactor.user.accessToken);
         this.router.navigate(['/signIn']);
       }, err=>{
         alert(err.message);
@@ -40,6 +43,10 @@ export class FirebaseService {
       }, err=>{
         alert(err.message);
       })
+    }
+
+    loggedIn(){
+      return !!localStorage.getItem('token');
     }
   
 }

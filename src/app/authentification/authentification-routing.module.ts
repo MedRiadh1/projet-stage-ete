@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { DashboardComponent } from '../dashboard/dashboard.component';
 import { AuthentificationComponent } from './authentification/authentification.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { SignInComponent } from './sign-in/sign-in.component';
@@ -11,8 +12,6 @@ const routes: Routes = [
     {path: 'signIn', component: SignInComponent},
     {path: 'signUp', component: SignUpComponent}
   ]},
-  {path: '', redirectTo: '/signUp', pathMatch: 'full'},
-
   {path: '**', component: PageNotFoundComponent}
 
 ];

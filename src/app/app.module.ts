@@ -7,10 +7,13 @@ import { AppComponent } from './app.component';
 import { AuthentificationModule } from './authentification/authentification.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FirebaseService } from './services/firebase.service';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { AuthGuard } from './auth.guard';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DashboardComponent
     ],
   imports: [
     BrowserModule,
@@ -26,7 +29,7 @@ import { FirebaseService } from './services/firebase.service';
       appId: "1:865771940819:web:4c5cec56e777cbf1965d26"
     })
   ],
-  providers: [FirebaseService],
+  providers: [FirebaseService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

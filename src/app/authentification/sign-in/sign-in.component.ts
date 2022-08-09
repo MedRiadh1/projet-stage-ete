@@ -21,11 +21,11 @@ export class SignInComponent implements OnInit {
     });
   }
 
-  /*submit() {
+  submit() {
     console.log(this.logInForm);
-  }*/
+  }
 
-  submit(){
+  login(){
     if (this.logInForm.controls.eMail.required=='true' || this.logInForm.controls.eMail.email=='true'){
       alert('Please enter your email');
       return;
