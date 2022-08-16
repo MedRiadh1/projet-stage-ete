@@ -7,13 +7,19 @@ import { AppComponent } from './app.component';
 import { AuthentificationModule } from './authentification/authentification.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FirebaseService } from './services/firebase.service';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { DashboardComponent } from './private/dashboard/dashboard.component';
 import { AuthGuard } from './auth.guard';
+import { AngularFirestoreModule } from "@angular/fire/compat/firestore";
+import { SideBarComponent } from './shared/side-bar/side-bar.component';
+import { NavBarComponent } from './shared/nav-bar/nav-bar.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent
+    DashboardComponent,
+    SideBarComponent,
+    NavBarComponent
     ],
   imports: [
     BrowserModule,
@@ -27,7 +33,8 @@ import { AuthGuard } from './auth.guard';
       storageBucket: "stage-ete-6edd7.appspot.com",
       messagingSenderId: "865771940819",
       appId: "1:865771940819:web:4c5cec56e777cbf1965d26"
-    })
+    }),
+    AngularFirestoreModule
   ],
   providers: [FirebaseService, AuthGuard],
   bootstrap: [AppComponent]

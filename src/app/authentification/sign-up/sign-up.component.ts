@@ -42,6 +42,7 @@ export class SignUpComponent implements OnInit {
       return;
     }
     this.auth.register(this.registrationForm.controls.email.value, this.registrationForm.controls.password.value);
+    // this.auth.addData(this.registrationForm.value);
   }
 
 }
