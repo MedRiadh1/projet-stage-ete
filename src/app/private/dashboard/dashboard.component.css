@@ -4,6 +4,8 @@
 
 .card{
     height: 7cm;
+    border: none;
+    box-shadow: 20px 20px 20px 0 rgb(152 152 152 / 17%);
 }
 
 /* #content{

@@ -12,6 +12,8 @@ import { AuthGuard } from './auth.guard';
 import { AngularFirestoreModule } from "@angular/fire/compat/firestore";
 import { SideBarComponent } from './shared/side-bar/side-bar.component';
 import { NavBarComponent } from './shared/nav-bar/nav-bar.component';
+import { FormsModule } from '@angular/forms';
+import { CardComponent } from './shared/card/card.component';
 
 
 @NgModule({
@@ -19,7 +21,8 @@ import { NavBarComponent } from './shared/nav-bar/nav-bar.component';
     AppComponent,
     DashboardComponent,
     SideBarComponent,
-    NavBarComponent
+    NavBarComponent,
+    CardComponent
     ],
   imports: [
     BrowserModule,
@@ -34,7 +37,8 @@ import { NavBarComponent } from './shared/nav-bar/nav-bar.component';
       messagingSenderId: "865771940819",
       appId: "1:865771940819:web:4c5cec56e777cbf1965d26"
     }),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    FormsModule
   ],
   providers: [FirebaseService, AuthGuard],
   bootstrap: [AppComponent]

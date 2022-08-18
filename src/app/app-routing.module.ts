@@ -8,6 +8,11 @@ const routes: Routes = [
     path: 'auth',
     loadChildren: () => import('./authentification/authentification.module').then(m => m.AuthentificationModule)
   },
+  {
+    path: 'private',
+    loadChildren: () => import('./private/private.module').then(m => m.PrivateModule)
+  
+  },
   {path: '',   redirectTo: '/signIn', pathMatch: 'full' },
   {path: 'dashboard', component:DashboardComponent, canActivate: [AuthGuard]}
 
