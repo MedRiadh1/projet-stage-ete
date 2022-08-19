@@ -1,6 +1,26 @@
 $primary: rgb(0, 242, 85);
 $secondary:rgb(152, 152, 152);
 
+
+.status{
+    border-width: 2px;
+    border-radius: 5px;
+    background-color: rgb(0, 251, 255);
+    color: rgba(0, 221, 255, 0.703);
+}
+.status2{
+    border-width: 2px;
+    border-radius: 5px;
+    background-color: rgba(241, 76, 76, 0.737);
+    color: red;
+}
+.status3{
+    border-width: 2px;
+    border-radius: 5px;
+    background-color: rgb(255, 194, 104);
+    color: orange;
+}
+
 // .side{
 //     position: fixed;
 //     top: 80px;
@@ -20,23 +40,3 @@ $secondary:rgb(152, 152, 152);
 //     margin-left: 200px;
 //     height: calc(100vh - 80px);
 // }
-
-.status{
-    border-width: 2px;
-    border-radius: 5px;
-    background-color: rgb(0, 251, 255);
-    color: rgb(0, 221, 255);
-}
-.status2{
-    border-width: 2px;
-    border-radius: 5px;
-    background-color: rgba(241, 76, 76, 0.737);
-    color: red;
-}
-.status3{
-    border-width: 2px;
-    border-radius: 5px;
-    background-color: rgb(255, 194, 104);
-    color: orange;
-}
-
