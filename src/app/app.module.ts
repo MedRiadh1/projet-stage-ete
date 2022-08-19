@@ -37,8 +37,7 @@ import { CardComponent } from './shared/card/card.component';
       messagingSenderId: "865771940819",
       appId: "1:865771940819:web:4c5cec56e777cbf1965d26"
     }),
-    AngularFirestoreModule,
-    FormsModule
+    AngularFirestoreModule
   ],
   providers: [FirebaseService, AuthGuard],
   bootstrap: [AppComponent]

@@ -21,22 +21,22 @@ $secondary:rgb(152, 152, 152);
     color: orange;
 }
 
-// .side{
-//     position: fixed;
-//     top: 80px;
-//     left: 0;
-//     width: 200px;
-// }
+.side{
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 200px;
+}
 
-// .nav{
-//     position: fixed;
-//     top: 0;
-//     left: 0;
-//     width: 100%;
-// }
+.bar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
 
-// .cnt{
-//     margin-top: 80px;
-//     margin-left: 200px;
-//     height: calc(100vh - 80px);
-// }
+.cnt{
+    margin-top: 80px;
+    margin-left: 200px;
+    height: calc(100vh - 80px);
+}
