@@ -8,13 +8,24 @@ import { FirebaseService } from 'src/app/services/firebase.service';
 })
 export class DashboardComponent implements OnInit {
 
+  data:any;
+
   constructor(private auth: FirebaseService) { }
 
   ngOnInit(): void {
+    this.getData();
   }
 
   logOut(){
     this.auth.logOut();
+  }
+
+  getData(){
+    this.auth.getData().subscribe((todolist:any)=>{
+      console.log('dataaaaaaaaaaaa',todolist);
+      this.data=todolist;
+    });
+
   }
 
 }

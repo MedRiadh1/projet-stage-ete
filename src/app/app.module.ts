@@ -12,7 +12,6 @@ import { AuthGuard } from './auth.guard';
 import { AngularFirestoreModule } from "@angular/fire/compat/firestore";
 import { SideBarComponent } from './shared/side-bar/side-bar.component';
 import { NavBarComponent } from './shared/nav-bar/nav-bar.component';
-import { FormsModule } from '@angular/forms';
 import { CardComponent } from './shared/card/card.component';
 
 

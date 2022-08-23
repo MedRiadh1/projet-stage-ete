@@ -53,6 +53,12 @@ export class FirebaseService {
       return !!localStorage.getItem('token');
     }
 
+    getData(): any {
+      return this.firestore
+     .collection("to-do")
+     .valueChanges();
+   }
+
   //   addData(value:any) {
   //     return new Promise<any>((resolve, reject) =>{
   //         this.firestore
