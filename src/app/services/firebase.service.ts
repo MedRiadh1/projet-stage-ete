@@ -58,7 +58,7 @@ export class FirebaseService {
     getData(): any {
       return this.firestore
      .collection("to-do")
-     .valueChanges();
+     .valueChanges(); 
    }
 
     addData(value:any) {
