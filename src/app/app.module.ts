@@ -13,6 +13,7 @@ import { AngularFirestoreModule } from "@angular/fire/compat/firestore";
 import { SideBarComponent } from './shared/side-bar/side-bar.component';
 import { NavBarComponent } from './shared/nav-bar/nav-bar.component';
 import { CardComponent } from './shared/card/card.component';
+import { AddTodoComponent } from './shared/add-todo/add-todo.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { CardComponent } from './shared/card/card.component';
     DashboardComponent,
     SideBarComponent,
     NavBarComponent,
-    CardComponent
+    CardComponent,
+    AddTodoComponent
     ],
   imports: [
     BrowserModule,

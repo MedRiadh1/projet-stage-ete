@@ -1,0 +1,42 @@
+<div class="bar">
+    <app-nav-bar></app-nav-bar>
+</div>
+
+<div class="side">
+    <app-side-bar></app-side-bar>
+</div>
+
+<div class="cnt bg-light">
+    <div class="modalDialog">
+        <div class="gradiantClass w-100">
+              <div class="card">
+                    <div class="card-header border-0">
+                        <h2>Add Form</h2>
+                    </div>
+                  
+                  <div  class="card-body border-0">
+                    <form [formGroup]="addForm">
+              
+                        <div class="d-flex align-items-start flex-column mb-3">
+                            <label class="form-label fw-semibold">Subject</label>
+                            <input formControlName="subject" placeholder="subject" class="form-control" type="text">
+                        </div>
+                          
+                        <div class="d-flex align-items-start flex-column mb-3">
+                            <label class="form-label fw-semibold">Date</label>
+                            <input formControlName="date" placeholder="date" class="form-control" type="text">
+                        </div>
+                  
+                        <div class="d-flex align-items-start flex-column mb-3">
+                            <label class="form-label fw-semibold">Write your to-do note</label>
+                            <input formControlName="text" placeholder="write here" class="form-control" type="text">
+                        </div>
+                    </form>
+                </div>
+                <div class="w-100 px-3">
+                    <button (click)="submit()" class="btn btn-dark text-white w-100">submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

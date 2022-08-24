@@ -112,7 +112,7 @@
 
 <div class="cnt bg-light">
   <!-- <button class="text-start">Get Data</button> -->
-  <button class="btn btn-outline-info float-end">Add a to-do note</button>
+  <button class="btn btn-outline-info float-end" (click)="add()">Add a to-do note</button>
   <div *ngIf = "data" class="row">
     <app-card class="col-4" style="margin-top: 50px;" *ngFor="let item of data" [card]="item"></app-card>
   </div>

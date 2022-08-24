@@ -2,12 +2,14 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
 import { AngularFirestore } from "@angular/fire/compat/firestore";
+import { from } from 'rxjs';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class FirebaseService {
+
 
 
   constructor(private fireAuth: AngularFireAuth, private router:Router,  private firestore: AngularFirestore) {}
@@ -59,14 +61,11 @@ export class FirebaseService {
      .valueChanges();
    }
 
-  //   addData(value:any) {
-  //     return new Promise<any>((resolve, reject) =>{
-  //         this.firestore
-  //             .collection("users")
-  //             .add(value)
-  //             .then(res => {},
-  //              err => reject(err));
-  //     });
-  // }
+    addData(value:any) {
+      return from (this.firestore
+              .collection("to-do")
+              .add(value))
+      };
+
   
 }
