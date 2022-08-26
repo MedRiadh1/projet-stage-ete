@@ -1,11 +1,11 @@
-.row{
-    padding: 22px;
-}
-
 .card{
     height: 7cm;
     border: none;
     box-shadow: 20px 20px 20px 0 rgb(152 152 152 / 17%);
+}
+
+.mainPostion {
+    margin-top: 56px;
 }
 
 /* #content{

@@ -1,12 +1,16 @@
 .card{
     border: none;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.36), 0 6px 20px 0 rgba(0, 0, 0, 0.36);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     margin-right: 8px;
     width: 335px;
 }
 
 .card-title{
     text-align: center;
+}
+
+.ml-3 {
+    margin-left: 1rem !important;
 }
 
 .new{

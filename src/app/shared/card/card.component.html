@@ -1,18 +1,26 @@
-<div class="row">
-  <div class="card h-100 col-4 p-0">
-    <div class="card-title text-white">
-      <div id="title" class="{{card?.status}}">
-        {{card?.status}}
+<div class="card h-100 w-100">
+  <div class="card-title text-white">
+    <div id="title" class="{{card?.status}}">
+      <span class="px-3">{{card?.status}}</span>
+    </div>
+  </div>
+  <h5 class="card-title px-3 text-start">{{card?.subject}}</h5>
+  <div class="card-body">
+    <p class="card-text">{{card?.text}}</p>
+  </div>
+  <div class="card-footer"  style="border-top: none;">
+    <div class="d-flex justify-content-between align-item-center">
+      <div class="d-flex">
+        <div>
+          <small class="text-muted">{{card?.date}}</small>
+        </div>
+        <div class="ml-3">
+          <span class="p-1 text-white {{card?.type}}">{{card?.type}}</span>
+        </div>
       </div>
-    </div>
-    <h5 class="card-title">{{card?.subject}}</h5>
-    <div class="card-body">
-      <p class="card-text">{{card?.text}}</p>
-    </div>
-    <div class="card-footer"  style="border-top: none;">
-      <small class="text-muted">{{card?.date}}</small>
-      <span class="{{card?.type}}">{{card?.type}}</span>
-      <button class="btn btn-light text-success btn-sm float-end" (click)="goEdit()">Edit</button>
+      <div>
+        <button class="btn btn-light text-success btn-sm float-end" (click)="goEdit()">Edit</button>
+      </div>
     </div>
   </div>
 </div>
