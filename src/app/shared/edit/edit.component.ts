@@ -22,7 +22,8 @@ export class EditComponent implements OnInit {
       status: new FormControl (this.card.status, [Validators.required]),
       subject : new FormControl (this.card.subject, [Validators.required]),
       date : new FormControl (this.card.date, [Validators.required]),
-      text : new FormControl (this.card.text, [Validators.required])
+      text : new FormControl (this.card.text, [Validators.required]),
+      type: new FormControl (this.card.type, [Validators.required])
     });
   }
   getSelectedCard(){
@@ -30,7 +31,9 @@ export class EditComponent implements OnInit {
   }
 
   update(){
-    this.db.update( this.editForm.value);
-    this.router.navigate(['/dashboard'])
+    this.db.update(this.editForm.value, this.card.id).then((elemUpdated:any)=>{
+      this.router.navigate(['/dashboard']);
+    });
+
   };
 }

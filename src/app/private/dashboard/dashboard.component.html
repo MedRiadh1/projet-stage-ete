@@ -1,117 +1,12 @@
-<!-- <div class="container-fluid">
-  <app-nav-bar></app-nav-bar>
-</div>
-<div class="row px-0 h-100">
-  <div class="col-2 p-0 h-100">
-    <div class="sidebar h-100">
-      <app-side-bar></app-side-bar>
-    </div>
-  </div>
-  <div class="col-10 bg-light">
-    <div id="content" class="container content bg-light">
-      <div class="row">
-        <div class="col-md-4">
-          <div class="card h-100">
-            <h5 class="card-title">Card title</h5>
-            <div class="card-body">
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            </div>
-            <div class="card-footer">
-              <small class="text-muted">Last updated 3 mins ago</small>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card h-100">
-            <h5 class="card-title">Card title</h5>
-            <div class="card-body">
-              <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-            </div>
-            <div class="card-footer">
-              <small class="text-muted">Last updated 3 mins ago</small>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card h-100">
-            <h5 class="card-title">Card title</h5>
-            <div class="card-body">
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-            </div>
-            <div class="card-footer">
-              <small class="text-muted">Last updated 3 mins ago</small>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div> -->
-
-
-
-<!-- <div class="container">
-  <div class="row">
-    <div class="col-3">
-      <div class="card">
-        <div class="card-title">
-          <p>hello</p>
-        </div>
-        <div class="card-body">
-          <input type="text">
-        </div>
-      </div>
-    </div>
-    <div class="col-3">
-      <div class="card">
-        <div class="card-title">
-          <p>hello</p>
-        </div>
-        <div class="card-body">
-          <input type="text">
-        </div>
-      </div>
-    </div>
-    <div class="col-3">
-      <div class="card">
-        <div class="card-title">
-          <p>hello</p>
-        </div>
-        <div class="card-body">
-          <input type="text">
-        </div>
-      </div>
-    </div>
-    <div class="col-3">
-      <div class="card">
-        <div class="card-title">
-          <p>hello</p>
-        </div>
-        <div class="card-body">
-          <input type="text">
-        </div>
-      </div>
-    </div>
-  </div>
-</div> -->
-
-<!-- <div style="text-align:center">
-  <div class="w-100 px-3">
-      <button (click)="logOut()" class="btn btn-dark text-white w-100">Log Out</button>
-  </div>
-</div> -->
-
 <div class="bar">
   <app-nav-bar></app-nav-bar>
 </div>
-
 
 <div class="side">
   <app-side-bar></app-side-bar>
 </div>
 
 <div class="cnt bg-light" style="overflow: auto;">
-  <!-- <button class="text-start">Get Data</button> -->
   <button class="btn btn-outline-info float-end" (click)="add()">Add a to-do note</button>
   <div *ngIf = "data" class="row">
     <app-card class="col-4" style="margin-top: 50px;" *ngFor="let item of data" [card]="item"></app-card>

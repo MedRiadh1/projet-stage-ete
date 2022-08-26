@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
 import { AngularFirestore } from "@angular/fire/compat/firestore";
-import { from, observable, Observable } from 'rxjs';
+import { firstValueFrom, from, observable, Observable } from 'rxjs';
 
 
 @Injectable({
@@ -11,7 +11,7 @@ import { from, observable, Observable } from 'rxjs';
 export class FirebaseService {
 
   selectedCard :any;
-  // id:any;
+  id:any;
 
   constructor(private fireAuth: AngularFireAuth, private router:Router,  private firestore: AngularFirestore) {}
     
@@ -61,10 +61,20 @@ export class FirebaseService {
       return new Observable(ob =>{
         this.firestore
         .collection("to-do")
-        .valueChanges().subscribe(data=>{
+        .valueChanges().subscribe((data: any)=>{
           if(data){
-            const toDoList = data.filter((item : any) => item.UID === localStorage.getItem('UID'))
+            (this.firestore.collection("to-do").get()).subscribe((querySnapshot:any) => {
+              console.log(querySnapshot);
+              const ids: string[] = [];
+  
+              querySnapshot.forEach((doc:any) => {
+               ids.push(doc.id);
+              });
+
+            const toDoList = data.map((element:any, index:any)=> {return{ ...element,id: ids[index] }}).filter((item : any) => item.UID === localStorage.getItem('UID'))
             ob.next(toDoList)
+            });
+            
           }
         }, er => ob.next(er))
       }) 
@@ -85,16 +95,17 @@ export class FirebaseService {
     this.selectedCard = data;
   }
 
-  // getAll(){
-  //   return this.firestore.collection('to-do').snapshotChanges().subscribe(data => {
-  //     data.map(e =>{
-  //       return 
-  //        e.payload.doc.id;
-  //     })
-  //   })
-  // } 
+  getId(){
+    (this.firestore.collection("to-do").get()).subscribe((querySnapshot:any) => {
+      console.log(querySnapshot);
 
-  update( data: any, id?:string): Promise<void> {
-    return this.firestore.collection('to-do').doc('7iaQWqoFgI8iQyQLe1eO').update(data);
+      querySnapshot.forEach((doc:any) => {
+        console.log(doc.id);
+      });
+    });
+  }
+
+  update( data: any, id:string): Promise<void> {
+    return this.firestore.collection('to-do').doc(id).update(data);
   }
 }

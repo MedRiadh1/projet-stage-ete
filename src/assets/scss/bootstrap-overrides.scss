@@ -2,19 +2,19 @@ $primary: rgb(0, 242, 85);
 $secondary:rgb(152, 152, 152);
 
 
-.status{
+.low{
     border-width: 2px;
     border-radius: 5px;
     background-color: rgb(0, 251, 255);
     color: rgba(0, 221, 255, 0.703);
 }
-.status2{
+.high{
     border-width: 2px;
     border-radius: 5px;
     background-color: rgba(241, 76, 76, 0.737);
     color: red;
 }
-.status3{
+.mid{
     border-width: 2px;
     border-radius: 5px;
     background-color: rgb(255, 194, 104);

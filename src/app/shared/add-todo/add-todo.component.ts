@@ -20,7 +20,8 @@ export class AddTodoComponent implements OnInit {
     this.addForm = new FormGroup ({
       subject : new FormControl ('', [Validators.required]),
       date : new FormControl ('', [Validators.required]),
-      text : new FormControl ('', [Validators.required])
+      text : new FormControl ('', [Validators.required]),
+      type: new FormControl ('', [Validators.required])
     });
   }
 
