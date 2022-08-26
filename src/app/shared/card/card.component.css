@@ -9,7 +9,7 @@
     text-align: center;
 }
 
-#title{
+.new{
     border-width:2px;
     border-style:solid;
     border-color:blueviolet;
@@ -17,7 +17,7 @@
     background-color: blueviolet;
     text-align: left;
 }
-#title2{
+.inprogress{
     border-width:2px;
     border-style:solid;
     border-color:rgb(85, 154, 227);
@@ -25,7 +25,7 @@
     background-color: rgb(85, 154, 227);
     text-align: left;
 }
-#title3{
+.done{
     border-width:2px;
     border-style:solid;
     border-color:rgb(17, 233, 71);

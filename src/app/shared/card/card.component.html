@@ -1,8 +1,8 @@
 <div class="row">
   <div class="card h-100 col-4 p-0">
     <div class="card-title text-white">
-      <div id="title">
-        In progress
+      <div id="title" class="{{card?.status}}">
+        {{card?.status}}
       </div>
     </div>
     <h5 class="card-title">{{card?.subject}}</h5>
@@ -12,6 +12,7 @@
     <div class="card-footer"  style="border-top: none;">
       <small class="text-muted">{{card?.date}}</small>
       <span class="status">Low</span>
+      <button class="btn btn-light text-success btn-sm float-end" (click)="goEdit()">Edit</button>
     </div>
   </div>
 

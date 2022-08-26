@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './auth.guard';
 import { DashboardComponent } from './private/dashboard/dashboard.component';
 import { AddTodoComponent } from './shared/add-todo/add-todo.component';
+import { EditComponent } from './shared/edit/edit.component';
 
 
 const routes: Routes = [
@@ -17,7 +18,8 @@ const routes: Routes = [
   },
   {path: '',   redirectTo: '/signIn', pathMatch: 'full' },
   {path: 'dashboard', component:DashboardComponent, canActivate: [AuthGuard]},
-  {path :'addtodo', component: AddTodoComponent}
+  {path :'addtodo', component: AddTodoComponent},
+  {path: 'edit', component:EditComponent}
 ];
 
 @NgModule({

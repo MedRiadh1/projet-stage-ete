@@ -11,18 +11,18 @@ export class DashboardComponent implements OnInit {
 
   data:any;
 
-  constructor(private auth: FirebaseService, private router: Router) { }
+  constructor(private db: FirebaseService, private router: Router) { }
 
   ngOnInit(): void {
     this.getData();
   }
 
   logOut(){
-    this.auth.logOut();
+    this.db.logOut();
   }
 
   getData(){
-    this.auth.getData().subscribe((todolist:any)=>{
+    this.db.getData().subscribe((todolist:any)=>{
       console.log('dataaaaaaaaaaaa',todolist);
       this.data=todolist;
     });

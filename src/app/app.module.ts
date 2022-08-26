@@ -14,6 +14,7 @@ import { SideBarComponent } from './shared/side-bar/side-bar.component';
 import { NavBarComponent } from './shared/nav-bar/nav-bar.component';
 import { CardComponent } from './shared/card/card.component';
 import { AddTodoComponent } from './shared/add-todo/add-todo.component';
+import { EditComponent } from './shared/edit/edit.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { AddTodoComponent } from './shared/add-todo/add-todo.component';
     SideBarComponent,
     NavBarComponent,
     CardComponent,
-    AddTodoComponent
+    AddTodoComponent,
+    EditComponent
     ],
   imports: [
     BrowserModule,

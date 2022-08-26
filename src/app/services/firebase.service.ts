@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
 import { AngularFirestore } from "@angular/fire/compat/firestore";
-import { from } from 'rxjs';
+import { from, observable, Observable } from 'rxjs';
 
 
 @Injectable({
@@ -10,7 +10,8 @@ import { from } from 'rxjs';
 })
 export class FirebaseService {
 
-
+  selectedCard :any;
+  // id:any;
 
   constructor(private fireAuth: AngularFireAuth, private router:Router,  private firestore: AngularFirestore) {}
     
@@ -40,7 +41,7 @@ export class FirebaseService {
       })
     }
 
-    //sign out
+    //sign out method
     logOut(){
       this.fireAuth.signOut().then(()=>{
         localStorage.removeItem('token');
@@ -55,17 +56,45 @@ export class FirebaseService {
       return !!localStorage.getItem('token');
     }
 
+    //get data method
     getData(): any {
-      return this.firestore
-     .collection("to-do")
-     .valueChanges(); 
+      return new Observable(ob =>{
+        this.firestore
+        .collection("to-do")
+        .valueChanges().subscribe(data=>{
+          if(data){
+            const toDoList = data.filter((item : any) => item.UID === localStorage.getItem('UID'))
+            ob.next(toDoList)
+          }
+        }, er => ob.next(er))
+      }) 
    }
 
+    //add data method
     addData(value:any) {
       return from (this.firestore
               .collection("to-do")
               .add(value))
       };
 
-  
+  getSelected(){
+    return this.selectedCard
+  }
+
+  setSelected(data:any){
+    this.selectedCard = data;
+  }
+
+  // getAll(){
+  //   return this.firestore.collection('to-do').snapshotChanges().subscribe(data => {
+  //     data.map(e =>{
+  //       return 
+  //        e.payload.doc.id;
+  //     })
+  //   })
+  // } 
+
+  update( data: any, id?:string): Promise<void> {
+    return this.firestore.collection('to-do').doc('7iaQWqoFgI8iQyQLe1eO').update(data);
+  }
 }

@@ -30,7 +30,8 @@ export class AddTodoComponent implements OnInit {
       // date:this.addForm.controls.date.value,
       // subject:this.addForm.controls.subject.value,
       // text:this.addForm.controls.text.value 
-      ...this.addForm.value
+      ...this.addForm.value,
+      status : 'new'
     };
     this.db.addData(payload).subscribe((res:any)=>{
       console.log(res);
